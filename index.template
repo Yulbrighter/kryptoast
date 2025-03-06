@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<title id="apppagetitle"></title>
+
+<meta charset="UTF-8">
+<meta http-equiv="default-style" content="files/style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta name="description" content="Text Crypting Application">
+<meta name="keywords" content="Crypting">
+<meta name="author" content="Yulbrighter">
+
+<link rel="stylesheet" href="files/style.css" />
+<link rel="manifest" href="manifest.json" / >
+<link rel="icon" href="files/kt48.ico" />
+
+
+
+<script src="files/kt.js"></script>
+<script src="files/kt-ui.js"></script>
+<script src="files/kt-user.js"></script>
+<script src="files/kt-terms.js"></script>
+
+<script src="files/kt-gram-fr.js"></script>
+<script src="files/kt-gram-en.js"></script>
+<script src="files/kt-gram-es.js"></script>
+<script src="files/kt-gram-all.js"></script>
+
+<script src="files/kt-lang-fr.js"></script>
+<script src="files/kt-lang-en.js"></script>
+<script src="files/kt-lang-es.js"></script>
+
+
+</head>
+
+
+
+<body>
+<div id="sub-body">
+
+<div id="windowPopup" onclick="ui_popup_hide(this)"></div>
+
+<form name="formulaire">
+
+<!-- #### HEADER Début ####  -->
+<div id="header-div">
+    <table id="header-table">
+        <tr>
+            <td rowspan="2" id="td-logo">
+                <img src="files/kryptoast.png" id="logo" />
+            </td>
+            <td>
+                <h1 id="appname"></h1>
+            </td>
+            <td id="header-controls">
+
+                    <span id="apphelp" class="small-help" onclick="ui_show_help(ui_lang.help_application)">?</span>
+  
+                    <input type="button" id="appreset" class="buttons" onclick="objKT.reloadPage()" value="" />
+  
+                    <span id="appmenu" onclick="ui_display_menu()">☰</span> 
+
+            </td>
+        </tr>
+         <tr>
+            <td colspan="2">
+                  <h2 id="apptitle"></h2> 
+            </td>
+         </tr>
+    </table>
+</div>
+<!-- #### HEADER Fin ####  -->
+
+${x}
+
+<!-- #### MAIN debut ####  -->
+<div id="main-wrapper">
+
+<table id="form-table">
+     <tr>
+          <td colspan="2">
+
+                <!-- #### CLEF Début ####  -->
+                <ul>
+                    <li><span class="subtitles" id="appkey"></span></li>
+                    <li><span class="small-help" onclick="ui_show_help(ui_lang.help_key)">?</span></li>
+                </ul>          
+                <div id="clef" class="conteneur">         
+                    <table>
+                         <tr>
+                            <td>
+                                <input type="password" id="keyString" name="keyString" class="fields" maxlength="15" size="15" onfocus="objKT.actionsKey(this)" />
+                            </td>
+                            <td>
+                                <input class="options" type="checkbox" id="expiration" name="expiration" value="expiration" />
+                                <label for="expiration" id="appexpiry"></label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- #### CLEF Fin ####  -->         
+
+          </td>
+     </tr>
+     <tr>
+         <td colspan="2">
+             
+              <!-- #### OPTION 1 Début ####  -->
+              <ul>
+                  <li><span class="subtitles" id="appoption1" ></span></li>
+                  <li><span class="small-help" onclick="ui_show_help(ui_lang.help_option1)">?</span></li>
+              </ul>
+              <div id="option1" class="conteneur"></div>
+              <!-- #### OPTION 1 Fin ####  -->
+              
+         </td>
+    </tr>
+     <tr>
+         <td>
+              
+              <!-- #### OPTION 2 Début ####  -->
+              <ul>
+                  <li><span class="subtitles" id="appoption2"></span></li>
+                  <li><span class="small-help" onclick="ui_show_help(ui_lang.help_option2)">?</span></li>
+              </ul>
+              <div id="option2" class="conteneur"></div>
+              <!-- #### OPTION 2 Fin ####  -->
+              
+         </td>
+         <td>
+              
+              <!-- #### OPTION 3 Début ####  -->
+              <ul>
+                  <li><span class="subtitles" id="appoption3"></span></li>
+                  <li><span class="small-help" onclick="ui_show_help(ui_lang.help_option3)">?</span></li>
+              </ul>
+              <div id="option3" class="conteneur"></div>
+              <!-- #### OPTION 3 Fin ####  -->
+              
+         </td>
+    </tr>
+    <tr>
+         <td colspan="2">
+         
+              <!-- #### INPUT Début ####  -->
+              <ul>
+                  <li><span class="subtitles" id="appinput"></span></li>
+                  <li><span class="small-help" onclick="ui_show_help(ui_lang.help_input)">?</span></li>
+				  <li id="inputLength" name="inputLength"></li>
+              </ul>
+              <textarea id="inputText" name="inputText" class="fields" rows="4" cols="50" onfocus="objKT.actionsInput(this)" onblur="objKT.showInputLength(this)"></textarea>
+              <!-- #### INPUT Fin ####  -->
+              
+         </td>
+    </tr>
+     <tr>
+          <td colspan="2">
+          
+                <!-- #### BOUTONS Début ####  -->
+                <ul>
+                    <li><span class="subtitles" id="appactions"></span></li>
+                    <li><span class="small-help" onclick="ui_show_help(ui_lang.help_actions)">?</span></li>
+                </ul>
+                <div class="conteneur">
+                    <table id="boutons">
+                        <tr>
+                            <td><input id="appcrypt" type="button" class="buttons" name="action" value="" onclick="objKT.actionsCrypt()" /></td>
+                            <td><input id="appdecrypt" type="button" class="buttons" name="action" value="" onclick="objKT.actionsDecrypt()" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- #### BOUTONS Fin ####  -->
+                
+          </td>
+     </tr>     
+    <tr>
+         <td colspan="2">
+         
+              <!-- #### OUTPUT Début ####  -->
+              <ul>
+                  <li><span class="subtitles" id="appoutput"></span></li>
+                  <li><span class="small-help" onclick="ui_show_help(ui_lang.help_output)">?</span></li>
+				  <li id="outputLength" name="outputLength"></li>
+              </ul>
+              <textarea id="outputText" name="outputText" class="fields" rows="4" cols="50"></textarea>
+              <!-- #### OUTPUT Fin ####  -->
+              
+         </td>
+     </tr>
+</table>
+
+</div>
+<!-- #### Main Wrapper Fin ####  -->
+
+</form>
+
+
+<div id="footer">
+   
+    <table>
+    <tr>    
+        <td id="appversion"></td>
+        <td id="td_appcopy">&copy; <span id="appcopy"></span></td>
+    </tr>
+    </table>
+    
+</div>
+
+
+
+</div><!-- ### fin du DIV sub-body ### -->
+
+
+<script>
+
+// Service Worker Registration
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").then(
+        (registration) => {
+          console.log("Service worker registration successful:", registration);
+        },
+        (error) => {
+          console.error(`Service worker registration failed: ${error}`);
+        },
+      );
+    } else {
+      console.error("Service workers are not supported.");
+    }
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+<script>
+    user_actions_onload();
+    ui_actions_onload();
+	const objKT = new classKrypToast();
+	objKT.actionsOnload();
+    ui_update_css();
+</script>
+
+
